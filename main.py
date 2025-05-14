@@ -19,4 +19,7 @@ if __name__ == '__main__':
     print(category1.middle_price())
 
     category_empty = Category("Пустая категория", "Категория без продуктов", [])
-    print(category_empty.middle_price()) 
+    print(category_empty.middle_price())
+
+
+
