@@ -11,4 +11,14 @@ def test_product_creation():
 def test_product_zero_quantity():
     with pytest.raises(ValueError) as exc_info:
         Product("Test Product", "Test Description", 100.0, 0)
-    assert str(exc_info.value) == "Товар с нулевым количеством не может быть добавлен" 
+    assert str(exc_info.value) == "Товар с нулевым количеством не может быть добавлен"
+
+def test_product_negative_quantity():
+    with pytest.raises(ValueError) as exc_info:
+        Product("Test Product", "Test Description", 100.0, -1)
+    assert str(exc_info.value) == "Товар с нулевым количеством не может быть добавлен"
+
+def test_product_negative_price():
+    with pytest.raises(ValueError) as exc_info:
+        Product("Test Product", "Test Description", -100.0, 5)
+    assert str(exc_info.value) == "Цена товара не может быть отрицательной" 
